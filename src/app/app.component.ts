@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-Forms-Practice';
+
+
+  /* user = {
+    firstName: '',
+    email: ''
+  };
+ 
+  onSubmit(form: any) {
+    if (form.valid) {
+      console.log('Form Submitted!', this.user);
+    } else {
+      console.log('Form is invalid');
+    }
+  }
+}*/
+
+
+  btnClick(registrationForm:NgForm) {
+    console.log(registrationForm);
+  }
+
 }
