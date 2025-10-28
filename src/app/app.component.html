@@ -1,52 +1,7 @@
 
 
-<!--<div style="margin: 50px; padding: 50px" class="row">
-  <div class="col-8">
-    <h2>Registration Form</h2>
- 
-<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">-->
-  <!-- First Name -->
- <!---- <label>First Name:</label><br>
-  <input type="text" 
-         name="firstName" 
-         [(ngModel)]="user.firstName" 
-         required 
-         maxlength="15">
-  <br>
-  <span *ngIf="userForm.submitted && userForm.controls['firstName']?.errors?.['required']">
-    First name is required.
-  </span>
-  <span *ngIf="userForm.controls['firstName']?.errors?.['maxlength']">
-    Maximum 15 characters allowed.
-  </span>
-  <br><br>-->
- 
-  <!-- Email -->
-  <!--<label>Email:</label><br>
-  <input type="email" 
-         name="email" 
-         [(ngModel)]="user.email" 
-         required>
-  <br>
-  <span *ngIf="userForm.submitted && userForm.controls['email']?.errors?.['required']">
-    Email is required.
-  </span>
-  <span *ngIf="userForm.controls['email']?.errors?.['email']">
-    Please enter a valid email address.
-  </span>
-  <br><br>-->
- 
-  <!-- Submit Button -->
-  <!--<button type="submit">Submit</button>
-</form>-->
- 
-<!-- Display entered data -->
-<!--<div *ngIf="userForm.submitted">
-  <h3>Form Data:</h3>
-  <p><b>First Name:</b> {{ user.firstName }}</p>
-  <p><b>Email:</b> {{ user.email }}</p>
-</div>-->
 
+          
  <div style="margin: 50px; padding: 50px" class="row">
   <div class="col-8">
     <form #registrationform="ngForm" ngForm>
@@ -125,4 +80,82 @@
         <!-- <span style="color:red"  *ngIf="contrycodeName.dirty && contrycodeName.errors?.['max']">Please Do't enter more than 5 charcters</span> -->
       </div>
 
-      
+  
+
+
+      <!--age-->
+       <div class="form-group">
+        <label for="AgeId">User Age *</label>
+        <input
+          id="AgeId"
+          type="text"
+          class="form-control"
+          name="userage"
+          ngModel
+          #UserAge="ngModel"
+          pattern="[0-9]*" 
+          required  
+        />
+        <span
+          style="color: red"
+          *ngIf="UserAge.dirty && UserAge.errors?.['required']"
+          >Please enter the YOur Age</span
+        >
+        <span
+          style="color: red"
+          *ngIf="UserAge.dirty && UserAge.errors?.['pattern']"
+          >Please enter Numbers only</span
+        >
+        <!-- <span style="color:red"  *ngIf="contrycodeName.dirty && contrycodeName.errors?.['max']">Please Do't enter more than 5 charcters</span> -->
+      </div>
+
+
+
+      <!-- optionsList 
+       what kind of element we are going to use for dropdown 
+      -->
+
+       <div class="form-group">
+        <label class="col-form-label" for="userchoiceid">User Choices *</label>
+
+        <select name="UserChoice" id="userchoiceid" class="form-select" #UserChoice="ngModel"  ngModel required>
+          <option value="">Select an Option</option>
+          <option [value]="item.value" *ngFor="let item of optionsList">{{item.name}}</option>
+        </select>
+
+          <span
+          style="color: red ; margin-bottom:10px"
+          *ngIf="UserChoice.touched && UserChoice.errors?.['required']"
+          >Please enter YOur choice</span>
+
+       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <br />
+      <!-- Note : i want to make button as disbaled incase form is invalid -->
+      <!-- <button [disabled]="registrationform.invalid" type="submit" class="btn btn-primary">Submit</button> -->
+      <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="btnClick(registrationform)"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
