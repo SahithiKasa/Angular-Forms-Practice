@@ -1,0 +1,152 @@
+
+ <!-- 3 days -->
+<div style="margin: 50px; padding: 50px" class="row" >
+  <div class="col-8">
+<form [formGroup]="registrationForm" (ngSubmit)="evtClick()">
+     
+  <!-- User First Name -->
+   <div class="form-group">
+  <label for="userFirstID">FirstName *
+
+  </label><br>
+  <input
+    type="text"
+    id="userFirstID"
+    name="userFirstname"
+    formControlName="userFirstname"
+    class="form-control"
+    required
+  />
+  <span *ngIf="registrationForm.get('userFirstname')?.touched
+   && registrationForm.get('userFirstname')?.errors?.['required']"
+        style="color: red"
+    ><br>
+    Firstname is required.</span>
+  
+  <span *ngIf="registrationForm.get('userFirstname')?.touched && registrationForm.get('userFirstname')?.errors?.['minlength']"
+       style="color: red"
+    ><br>Minimum length is 3 characters.
+  </span>
+   </div>
+  <br /><br />
+
+ <div class="form-group">
+    <!-- User Email -->
+  <label for="useremail">Email *
+
+  </label><br>
+  <input
+    type="email"
+    id="useremail"
+    name="useremail"
+    formControlName="useremail"
+    class="form-control"
+    required
+  />
+  <span *ngIf="registrationForm.get('useremail')?.touched && registrationForm.get('useremail')?.errors?.['required']"
+    style="color: red"
+    >
+    <br>
+    Email is required.
+  </span>
+  <span *ngIf="registrationForm.get('useremail')?.touched && registrationForm.get('useremail')?.errors?.['minlength']"
+    style="color: red"
+ > <br>
+ Minimum length is 3.
+  </span>
+  <span *ngIf="registrationForm.get('useremail')?.touched && registrationForm.get('useremail')?.errors?.['email']"
+    style="color: red; margin-bottom:10px"
+  ><br>
+  Invalid email format.
+  </span>
+  <br />
+ </div>
+ 
+ <div class="form-group">
+  <!-- User Password -->
+  <label for="userPassword">Password:</label><br>
+  <input
+    type="password"
+    id="userPassword"
+    name="userPassword"
+    formControlName="userPassword"
+    class="form-control"
+    required
+  />
+  <span *ngIf="registrationForm.get('userPassword')?.touched && registrationForm.get('userPassword')?.errors?.['required']"
+    style="color: red"
+    ><br>Password is required.
+  </span>
+  <span *ngIf="registrationForm.get('userPassword')?.touched && registrationForm.get('userPassword')?.errors?.['minlength']"
+    style="color: red"
+   > <br>Minimum length is 6.
+  </span>
+  <br />
+ </div>
+
+
+ <div class="form-group">
+  <!-- User Choice -->
+  <label for="userchoice">Choice *</label><br>
+   <select name="userchoice" id="userchoice" class="form-select"   formControlName="userchoice">
+          <option value="">Select an Option</option>
+          <option [value]="item.value" *ngFor="let item of optionsList">{{item.name}}</option>
+        </select>
+  <span *ngIf="registrationForm.get('userchoice')?.touched && registrationForm.get('userchoice')?.errors?.['required']"
+   style="color: red"
+    ><br>Choice is required.
+  </span>
+  <br />
+ </div>
+
+ <div class="form-group">
+  <!-- User Phone Number -->
+  <label for="userphonenumber">Phone Number:</label><br>
+  <input
+    type="text"
+    id="userphonenumber"
+    name="userphonenumber"
+    formControlName="userphonenumber"
+    class="form-control"
+    pattern='[0-9]{10}'
+    required
+  />
+  <span *ngIf="registrationForm.get('userphonenumber')?.touched && registrationForm.get('userphonenumber')?.errors?.['required']"
+    style="color: red"
+    ><br>Phone number is required.
+  </span>
+  <span *ngIf="registrationForm.get('userphonenumber')?.touched && registrationForm.get('userphonenumber')?.errors?.['pattern']"
+    style="color: red"
+    ><br>Must be a 10-digit number.
+  </span>
+  <br />
+ </div>
+
+
+ <div class="form-group">
+  <!-- User Company Mail -->
+  <label for="usercompanymailid">Company Mail:</label><br>
+  <input
+    type="email"
+    id="usercompanymailid"
+    name="usercompanymailid"
+    formControlName="usercompanymailid"
+    class="form-control"
+    pattern='^[a-zA-Z0-9._%+\\-]+@misard\.com$'
+    required
+  />
+  <span *ngIf="registrationForm.get('usercompanymailid')?.touched && registrationForm.get('usercompanymailid')?.errors?.['required']"
+   style="color: red"
+   > <br>Company email is required.
+  </span>
+  <span *ngIf="registrationForm.get('usercompanymailid')?.touched && registrationForm.get('usercompanymailid')?.errors?.['pattern']"
+   style="color: red"
+    ><br>Must end with @misard.com.
+  </span>
+  <br />
+ </div>
+ 
+  <button class="btn btn-primary"  type="submit" > Submit </button>
+</form>
+  </div>
+</div>

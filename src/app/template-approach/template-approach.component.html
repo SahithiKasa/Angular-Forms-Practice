@@ -9,12 +9,12 @@
           class="form-control"
           name="firstname"
           ngModel
-          #firstname="ngModel"
+          #myfirstName="ngModel"
           required
         />
         <span
           style="color: red"
-          *ngIf="firstname.dirty && firstname.invalid"
+          *ngIf="myfirstName.dirty && myfirstName.invalid"
           >Please enter the firstname</span
         >
       </div>
@@ -76,9 +76,9 @@
         <!-- <span style="color:red"  *ngIf="contrycodeName.dirty && contrycodeName.errors?.['max']">Please Do't enter more than 5 charcters</span> -->
       </div>
 
-  
+      <br />
 
-                  
+
       <!--age-->
        <div class="form-group">
         <label for="AgeId">User Age *</label>

@@ -1,0 +1,19 @@
+
+#userFirstID.ng-dirty.ng-invalid{
+  border: 2px solid red;
+}
+
+#useremail.ng-dirty.ng-invalid{
+  border: 2px solid red;
+}
+#userPassword.ng-dirty.ng-invalid{
+  border: 2px solid red;
+}
+#userchoice.ng-dirty.ng-invalid{
+  border: 2px solid red;
+}
+#userphonenumber.ng-dirty.ng-invalid{
+  border: 2px solid red;}
+#usercompanymailid.ng-dirty.ng-invalid{
+  border: 2px solid red;}
+  
