@@ -1,0 +1,113 @@
+
+<!-- 
+<p>{{words  | uppercase}}</p>
+
+
+<p>{{words1 | lowercase}}</p> -->
+
+
+
+{{todayDate}}
+
+<br>
+
+{{todayDate | date | uppercase}}
+
+<br>
+{{todayDate | date : 'short'}}
+
+
+<br>
+{{todayDate | date : 'medium'  | lowercase}}
+
+
+<br>
+{{todayDate | date : 'full'}}
+
+
+
+<br>
+
+{{salary | currency}}
+
+
+<!-- 
+<input type="text" [value]="words|uppercase"  >
+
+<input type="text" [value]="words1|lowercase"  > -->
+
+
+
+
+<hr>
+
+<h2>Test Custome Pipe</h2>
+
+
+"Hello world"        | longText 
+
+<br>
+
+{{ "MY Name IS Angular" | longText}}
+
+
+
+
+
+<!-- below paragraph for 20 -->
+<p>
+  {{"Get live cricket scores, cricket updates of upcoming International, domestic and T20 matches. Catch all the latest videos, news about cricket on " | longText : 20 : '...' | lowercase}}
+</p>
+
+
+
+<!-- below paragrpah for 15 -->
+<p>
+  {{"Fast live scores and ball by ball commentary, Notification updates for live cricket matches, Easy to read latest cricket news, Cricket videos. " | longText : 15 : '>>>' | uppercase}}
+</p>
+
+
+
+
+<!-- below paragrpah for 15 -->
+<p>
+  {{"educationafsajbfakjs;f;savflkjsa.fb;ksaffb;kbjsabkjfabs;kfjasbf;ksand;ksajfdsakfsakjdbsa;kfda" | longText : 25 : '***'}}
+</p>
+
+
+<h2>Angular Pipes Example</h2>
+ 
+<p><b>Original Name:</b> {{ name }}</p>
+<p><b>Uppercase:</b> {{ name | uppercase }}</p>
+<p><b>Lowercase:</b> {{ name | lowercase }}</p>
+<p><b>Titlecase:</b> {{ title | titlecase }}</p>
+<p><b>Current Date:</b> {{ today | date:'fullDate' }}</p>
+<p><b>Price:</b> {{ price | currency:'INR' }}</p>
+<p><b>Decimal:</b> {{ marks | number:'1.2-2' }}</p>
+
+
+
+
+<h2>Long Text Example Using Pipes</h2>
+ 
+<!-- Original Text -->
+<p><b>Original Text:</b></p>
+<p>{{ longText }}</p>
+ 
+<!-- Using Built-in Lowercase Pipe -->
+<p><b>Lowercase Text:</b></p>
+<p>{{ longText | lowercase }}</p>
+ 
+<!-- Using Built-in Uppercase Pipe -->
+<p><b>Uppercase Text:</b></p>
+<p>{{ longText | uppercase }}</p>
+ 
+<h3>Custom Pipe Example</h3>
+<p><b>Original:</b>{{name}}</p>
+<p><b>Reversed (custom Pipe):</b>{{name|reverse}}</p>
+
+<p><b>Original:</b>{{title}}</p>
+<p><b>Reversed (custom Pipe):</b>{{title|reverse}}</p>
+
+<p><b>Shortened(limit 20 with custom suffix):</b></p>
+<p>{{longText| shorten:20:'[...]'}}</p>
