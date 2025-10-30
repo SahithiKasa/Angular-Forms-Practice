@@ -8,6 +8,8 @@ import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { LongTextPipe } from './long-text.pipe';
 import { ReversePipe } from './reverse.pipe';
 import { ShortenPipe } from './shorten.pipe';
+import { HighlightDirective } from './highlight.directive';
+import { DirectiveDemoComponent } from './directive-demo/directive-demo.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ShortenPipe } from './shorten.pipe';
     PipeDemoComponent,
     LongTextPipe,
     ReversePipe,
-    ShortenPipe
+    ShortenPipe,
+    HighlightDirective,
+    DirectiveDemoComponent
   ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule
